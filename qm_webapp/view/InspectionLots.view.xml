@@ -1,0 +1,150 @@
+<mvc:View
+    controllerName="com.qm.portal.qmportal.controller.InspectionLots"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="inspectionPage"
+        title="Inspection Lots"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <content>
+
+            <VBox
+                id="inspectionMainVBox"
+                class="sapUiSmallMargin">
+
+                <!-- SEARCH -->
+
+                <SearchField
+                    id="inspectionSearchField"
+                    width="100%"
+                    placeholder="Search Inspection Lot"
+                    liveChange="onSearch"
+                    class="sapUiSmallMarginBottom"/>
+
+                <!-- TITLE -->
+
+                <Title
+                    id="inspectionTitle"
+                    text="Inspection Lot Data"
+                    level="H2"
+                    class="sapUiSmallMarginBottom"/>
+
+                <!-- TABLE SCROLL -->
+
+                <ScrollContainer
+                    id="inspectionScrollContainer"
+                    horizontal="true"
+                    vertical="true"
+                    width="100%"
+                    height="600px">
+
+                    <Table
+                        id="inspectionTable"
+                        width="90rem"
+                        inset="false"
+                        growing="true"
+                        growingThreshold="20"
+                        items="{/ZI_QM_INSP_LOT_80}">
+
+                        <!-- COLUMNS -->
+
+                        <columns>
+
+                            <Column width="8rem">
+                                <Text text="Inspection Lot"/>
+                            </Column>
+
+                            <Column width="7rem">
+                                <Text text="Material"/>
+                            </Column>
+
+                            <Column width="12rem">
+                                <Text text="Description"/>
+                            </Column>
+
+                            <Column width="5rem">
+                                <Text text="Plant"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="Quantity"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="Status"/>
+                            </Column>
+
+                            <Column width="7rem">
+                                <Text text="Origin"/>
+                            </Column>
+
+                            <Column width="7rem">
+                                <Text text="Lot Status"/>
+                            </Column>
+
+                            <Column width="8rem">
+                                <Text text="Decision Date"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="UD Catalog"/>
+                            </Column>
+
+                            <Column width="8rem">
+                                <Text text="Usage Decision"/>
+                            </Column>
+
+                        </columns>
+
+                        <!-- ROWS -->
+
+                        <items>
+
+                            <ColumnListItem type="Active">
+
+                                <cells>
+
+                                    <Text text="{InspectionLot}"/>
+
+                                    <Text text="{Material}"/>
+
+                                    <Text text="{MaterialDescription}"/>
+
+                                    <Text text="{Plant}"/>
+
+                                    <Text text="{Quantity}"/>
+
+                                    <ObjectStatus
+                                        text="{Status}"
+                                        state="Success"/>
+
+                                    <Text text="{InspectionOrigin}"/>
+
+                                    <Text text="{LotStatus}"/>
+
+                                    <Text text="{DecisionDate}"/>
+
+                                    <Text text="{UDCatalog}"/>
+
+                                    <Text text="{UsageDecision}"/>
+
+                                </cells>
+
+                            </ColumnListItem>
+
+                        </items>
+
+                    </Table>
+
+                </ScrollContainer>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

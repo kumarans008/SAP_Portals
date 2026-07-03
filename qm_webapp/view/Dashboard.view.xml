@@ -1,0 +1,142 @@
+<mvc:View
+    controllerName="com.qm.portal.qmportal.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="dashboardPage"
+        title="QM Portal Dashboard">
+
+        <headerContent>
+
+            <Button
+                id="logoutButton"
+                text="Logout"
+                type="Reject"
+                icon="sap-icon://log"
+                press="onLogout"/>
+
+        </headerContent>
+
+        <content>
+
+            <VBox
+                id="dashboardMainVBox"
+                class="sapUiMediumMargin">
+
+                <Title
+                    id="dashboardTitle"
+                    text="Welcome to Quality Management Portal"
+                    level="H2"
+                    class="sapUiMediumMarginBottom"/>
+
+                <HBox
+                    id="dashboardHBox"
+                    wrap="Wrap"
+                    justifyContent="Center">
+
+                    <!-- Inspection Lots -->
+
+                    <Panel
+                        id="inspectionPanel"
+                        width="300px"
+                        class="sapUiMediumMargin"
+                        headerText="Inspection Lots">
+
+                        <content>
+
+                            <VBox
+                                id="inspectionVBox"
+                                class="sapUiMediumMargin">
+
+                                <Text
+                                    id="inspectionText"
+                                    text="Manage and view all inspection lots."/>
+
+                                <Button
+                                    id="inspectionButton"
+                                    text="Open"
+                                    type="Emphasized"
+                                    icon="sap-icon://inspection"
+                                    class="sapUiSmallMarginTop"
+                                    press="onInspectionLotsPress"/>
+
+                            </VBox>
+
+                        </content>
+
+                    </Panel>
+
+                    <!-- Result Recording -->
+
+                    <Panel
+                        id="resultPanel"
+                        width="300px"
+                        class="sapUiMediumMargin"
+                        headerText="Result Recording">
+
+                        <content>
+
+                            <VBox
+                                id="resultVBox"
+                                class="sapUiMediumMargin">
+
+                                <Text
+                                    id="resultText"
+                                    text="Record inspection results."/>
+
+                                <Button
+                                    id="resultButton"
+                                    text="Open"
+                                    type="Emphasized"
+                                    icon="sap-icon://write-new-document"
+                                    class="sapUiSmallMarginTop"
+                                    press="onResultRecordingPress"/>
+
+                            </VBox>
+
+                        </content>
+
+                    </Panel>
+
+                    <!-- Usage Decision -->
+
+                    <Panel
+                        id="usagePanel"
+                        width="300px"
+                        class="sapUiMediumMargin"
+                        headerText="Usage Decision">
+
+                        <content>
+
+                            <VBox
+                                id="usageVBox"
+                                class="sapUiMediumMargin">
+
+                                <Text
+                                    id="usageText"
+                                    text="Approve or reject inspection lots."/>
+
+                                <Button
+                                    id="usageButton"
+                                    text="Open"
+                                    type="Emphasized"
+                                    icon="sap-icon://decision"
+                                    class="sapUiSmallMarginTop"
+                                    press="onUsageDecisionPress"/>
+
+                            </VBox>
+
+                        </content>
+
+                    </Panel>
+
+                </HBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,156 @@
+<mvc:View
+    controllerName="com.qm.portal.qmportal.controller.ResultRecording"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="resultPage"
+        title="Result Recording"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <content>
+
+            <VBox
+                id="resultMainVBox"
+                class="sapUiSmallMargin">
+
+                <!-- SEARCH -->
+
+                <SearchField
+                    id="resultSearchField"
+                    width="100%"
+                    placeholder="Search Inspection Lot"
+                    liveChange="onSearch"
+                    class="sapUiSmallMarginBottom"/>
+
+                <!-- TITLE -->
+
+                <Title
+                    id="resultTitle"
+                    text="Result Recording Data"
+                    level="H2"
+                    class="sapUiSmallMarginBottom"/>
+
+                <!-- TABLE SCROLL -->
+
+                <ScrollContainer
+                    id="resultScrollContainer"
+                    horizontal="true"
+                    vertical="true"
+                    width="100%"
+                    height="600px">
+
+                    <Table
+                        id="resultTable"
+                        width="95rem"
+                        inset="false"
+                        growing="true"
+                        growingThreshold="20"
+                        items="{resultModel>/ZI_QM_RESULT_REC_80}">
+
+                        <!-- COLUMNS -->
+
+                        <columns>
+
+                            <Column width="8rem">
+                                <Text text="Inspection Lot"/>
+                            </Column>
+
+                            <Column width="7rem">
+                                <Text text="Material"/>
+                            </Column>
+
+                            <Column width="12rem">
+                                <Text text="Description"/>
+                            </Column>
+
+                            <Column width="5rem">
+                                <Text text="Plant"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="Quantity"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="Batch"/>
+                            </Column>
+
+                            <Column width="7rem">
+                                <Text text="Operation"/>
+                            </Column>
+
+                            <Column width="7rem">
+                                <Text text="Char No"/>
+                            </Column>
+
+                            <Column width="14rem">
+                                <Text text="Characteristic Description"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="Mean Value"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="Valuation"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="Defect Count"/>
+                            </Column>
+
+                        </columns>
+
+                        <!-- ROWS -->
+
+                        <items>
+
+                            <ColumnListItem type="Active">
+
+                                <cells>
+
+                                    <Text text="{resultModel>InspectionLot}"/>
+
+                                    <Text text="{resultModel>Material}"/>
+
+                                    <Text text="{resultModel>MaterialDescription}"/>
+
+                                    <Text text="{resultModel>Plant}"/>
+
+                                    <Text text="{resultModel>Quantity}"/>
+
+                                    <Text text="{resultModel>Batch}"/>
+
+                                    <Text text="{resultModel>OperationNumber}"/>
+
+                                    <Text text="{resultModel>CharacteristicNumber}"/>
+
+                                    <Text text="{resultModel>CharacteristicDescription}"/>
+
+                                    <Text text="{resultModel>MeanValue}"/>
+
+                                    <ObjectStatus
+                                        text="{resultModel>Valuation}"
+                                        state="Success"/>
+
+                                    <Text text="{resultModel>DefectCount}"/>
+
+                                </cells>
+
+                            </ColumnListItem>
+
+                        </items>
+
+                    </Table>
+
+                </ScrollContainer>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

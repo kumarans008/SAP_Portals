@@ -1,0 +1,231 @@
+{
+  "_version": "1.84.0",
+
+  "sap.app": {
+    "id": "com.qm.portal.qmportal",
+    "type": "application",
+
+    "i18n": "i18n/i18n.properties",
+
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+
+    "resources": "resources.json",
+
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.24.0",
+      "toolsId": "55964e4b-3e75-4eee-8e9f-8bf242459701"
+    },
+
+    "dataSources": {
+
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZI_QM_INSP_LOT_80_CDS/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      },
+
+      "resultService": {
+        "uri": "/sap/opu/odata/sap/ZI_QM_RESULT_REC_80_CDS/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      },
+
+       "usageService": {
+        "uri": "/sap/opu/odata/sap/ZI_QM_USAGE_DEC_80_CDS/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+       }
+
+    }
+  },
+
+  "sap.ui": {
+
+    "technology": "UI5",
+
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+
+  },
+
+  "sap.ui5": {
+
+    "flexEnabled": false,
+
+    "dependencies": {
+
+      "minUI5Version": "1.148.0",
+
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+
+    },
+
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "models": {
+
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.qm.portal.qmportal.i18n.i18n"
+        }
+      },
+
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+
+      "resultModel": {
+        "dataSource": "resultService",
+        "preload": true,
+        "settings": {}
+      }, 
+        "usageModel": {
+        "dataSource": "usageService",
+        "preload": true,
+        "settings": {}
+      }
+
+    },
+
+    "resources": {
+
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+
+    },
+
+    "routing": {
+
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.qm.portal.qmportal.view",
+        "async": true,
+        "viewPath": "com.qm.portal.qmportal.view"
+      },
+
+      "routes": [
+
+        {
+          "name": "RouteLogin",
+          "pattern": "",
+          "target": [
+            "TargetLogin"
+          ]
+        },
+
+        {
+          "name": "RouteDashboard",
+          "pattern": "Dashboard",
+          "target": [
+            "TargetDashboard"
+          ]
+        },
+
+        {
+          "name": "RouteInspectionLots",
+          "pattern": "InspectionLots",
+          "target": [
+            "TargetInspectionLots"
+          ]
+        },
+
+        {
+          "name": "RouteResultRecording",
+          "pattern": "ResultRecording",
+          "target": [
+            "TargetResultRecording"
+          ]
+        },
+
+        {
+          "name": "RouteUsageDecision",
+          "pattern": "UsageDecision",
+          "target": [
+            "TargetUsageDecision"
+          ]
+        }
+
+      ],
+
+      "targets": {
+
+        "TargetLogin": {
+          "id": "Login",
+          "name": "Login"
+        },
+
+        "TargetDashboard": {
+          "id": "Dashboard",
+          "name": "Dashboard"
+        },
+
+        "TargetInspectionLots": {
+          "id": "InspectionLots",
+          "name": "InspectionLots"
+        },
+
+        "TargetResultRecording": {
+          "id": "ResultRecording",
+          "name": "ResultRecording"
+        },
+
+        "TargetUsageDecision": {
+          "id": "UsageDecision",
+          "name": "UsageDecision"
+        }
+
+      }
+
+    },
+
+    "rootView": {
+      "viewName": "com.qm.portal.qmportal.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+
+  }
+
+}

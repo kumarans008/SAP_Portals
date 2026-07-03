@@ -1,0 +1,127 @@
+<mvc:View
+    controllerName="com.qm.portal.qmportal.controller.UsageDecision"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="usageDecisionPage"
+        title="Usage Decision"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <content>
+
+            <VBox
+                id="usageMainVBox"
+                class="sapUiSmallMargin">
+
+                <!-- Search Field -->
+
+                <SearchField
+                    id="usageSearchField"
+                    width="100%"
+                    placeholder="Search Inspection Lot"
+                    liveChange="onSearch"
+                    class="sapUiSmallMarginBottom"/>
+
+                <!-- Title -->
+
+                <Title
+                    id="usageTitle"
+                    text="Usage Decision Data"
+                    level="H2"
+                    class="sapUiSmallMarginBottom"/>
+
+                <!-- Horizontal Scroll -->
+
+                <ScrollContainer
+                    id="usageScrollContainer"
+                    horizontal="true"
+                    vertical="true"
+                    width="100%"
+                    height="600px">
+
+                    <Table
+                        id="usageDecisionTable"
+                        width="70rem"
+                        inset="false"
+                        growing="true"
+                        growingThreshold="20"
+                        items="{usageModel>/ZI_QM_USAGE_DEC_80}">
+
+                        <!-- Columns -->
+
+                        <columns>
+
+                            <Column width="8rem">
+                                <Text text="Inspection Lot"/>
+                            </Column>
+
+                            <Column width="7rem">
+                                <Text text="Material"/>
+                            </Column>
+
+                            <Column width="10rem">
+                                <Text text="Description"/>
+                            </Column>
+
+                            <Column width="5rem">
+                                <Text text="Plant"/>
+                            </Column>
+
+                            <Column width="7rem">
+                                <Text text="Decision Date"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="Quantity"/>
+                            </Column>
+
+                            <Column width="6rem">
+                                <Text text="Status"/>
+                            </Column>
+
+                        </columns>
+
+                        <!-- Rows -->
+
+                        <items>
+
+                            <ColumnListItem
+                                type="Active">
+
+                                <cells>
+
+                                    <Text text="{usageModel>InspectionLot}"/>
+
+                                    <Text text="{usageModel>Material}"/>
+
+                                    <Text text="{usageModel>MaterialDescription}"/>
+
+                                    <Text text="{usageModel>Plant}"/>
+
+                                    <Text text="{usageModel>DecisionDate}"/>
+
+                                    <Text text="{usageModel>Quantity}"/>
+
+                                    <ObjectStatus
+                                        text="{usageModel>Status}"
+                                        state="Success"/>
+
+                                </cells>
+
+                            </ColumnListItem>
+
+                        </items>
+
+                    </Table>
+
+                </ScrollContainer>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
