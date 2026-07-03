@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mvc:View
+    controllerName="project1.controller.Action"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="Action Management"
+        showNavButton="true"
+        navButtonPress="onBack">
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <Title
+                    text="Corrective &amp; Preventive Actions"
+                    level="H2"
+                    class="sapUiSmallMarginBottom"/>
+
+                <Table
+                    id="actionTable"
+                    items="{/RiskSet}">
+
+                    <columns>
+
+                        <Column>
+                            <Text text="Action ID"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Risk ID"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Action Type"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Responsible Person"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Status"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Created By"/>
+                        </Column>
+
+                    </columns>
+
+                    <items>
+
+                        <ColumnListItem>
+
+                            <cells>
+
+                                <Text text="{RiskId}"/>
+
+                                <Text text="{RiskId}"/>
+
+                                <ObjectStatus
+                                    text="Corrective"
+                                    state="Warning"/>
+
+                                <Text text="{CreatedBy}"/>
+
+                                <ObjectStatus
+                                    text="{Status}"
+                                    state="Success"/>
+
+                                <Text text="{CreatedBy}"/>
+
+                            </cells>
+
+                        </ColumnListItem>
+
+                    </items>
+
+                </Table>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

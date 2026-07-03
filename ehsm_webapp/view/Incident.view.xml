@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mvc:View
+    controllerName="project1.controller.Incident"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    core:require="{
+        formatter: 'project1/model/formatter'
+    }">
+
+    <Page
+        title="Incident Management"
+        showNavButton="true"
+        navButtonPress="onBack">
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <HBox
+                    justifyContent="SpaceBetween"
+                    class="sapUiSmallMarginBottom">
+
+                    <Title
+                        text="Incident List"
+                        level="H2"/>
+
+                    <ObjectStatus
+                        text="217 Records"
+                        state="Information"/>
+
+                </HBox>
+
+                <SearchField
+                    width="100%"
+                    placeholder="Search Incident"
+                    liveChange="onSearch"
+                    class="sapUiSmallMarginBottom"/>
+
+                <Table
+                    id="incidentTable"
+                    width="100%"
+                    sticky="ColumnHeaders"
+                    growing="true"
+                    growingThreshold="20"
+                    growingScrollToLoad="false"
+                    mode="SingleSelectMaster"
+                    itemPress="onIncidentSelect"
+                    items="{/IncidentSet}">
+
+                    <columns>
+
+                        <Column width="12rem">
+                            <Text text="Notification No"/>
+                        </Column>
+
+                        <Column width="20rem">
+                            <Text text="Description"/>
+                        </Column>
+
+                        <Column width="8rem">
+                            <Text text="Priority"/>
+                        </Column>
+
+                        <Column width="8rem">
+                            <Text text="Plant"/>
+                        </Column>
+
+                        <Column width="10rem">
+                            <Text text="Created Date"/>
+                        </Column>
+
+                    </columns>
+
+                    <items>
+
+                        <ColumnListItem type="Navigation">
+
+                            <cells>
+
+                                <Text
+                                    text="{
+                                        path: 'NotificationNo',
+                                        formatter: 'formatter.removeLeadingZeros'
+                                    }"/>
+
+                                <Text text="{Description}"/>
+
+                                <ObjectStatus
+                                    text="{Priority}"
+                                    state="Warning"/>
+
+                                <Text text="{Plant}"/>
+
+                                <Text
+                                    text="{
+                                        path: 'CreatedDate',
+                                        formatter: 'formatter.formatDate'
+                                    }"/>
+
+                            </cells>
+
+                        </ColumnListItem>
+
+                    </items>
+
+                </Table>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

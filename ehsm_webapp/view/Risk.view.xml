@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mvc:View
+    controllerName="project1.controller.Risk"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="Risk Management"
+        showNavButton="true"
+        navButtonPress="onBack">
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <Title
+                    text="Risk Assessments"
+                    level="H2"
+                    class="sapUiSmallMarginBottom"/>
+
+                <Table
+                    id="riskTable"
+                    items="{/RiskSet}">
+
+                    <columns>
+
+                        <Column>
+                            <Text text="Risk ID"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Status"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Type"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Title"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Created By"/>
+                        </Column>
+
+                        <Column>
+                            <Text text="Operational Status"/>
+                        </Column>
+
+                    </columns>
+
+                    <items>
+
+                        <ColumnListItem>
+
+                            <cells>
+
+                                <Text text="{RiskId}"/>
+                                <Text text="{Status}"/>
+                                <Text text="{RiskType}"/>
+                                <Text text="{Title}"/>
+                                <Text text="{CreatedBy}"/>
+                                <Text text="{OperationalStatus}"/>
+
+                            </cells>
+
+                        </ColumnListItem>
+
+                    </items>
+
+                </Table>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

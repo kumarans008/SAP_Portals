@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mvc:View
+    controllerName="project1.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt">
+
+    <Page showHeader="false">
+
+        <tnt:ToolPage>
+
+            <tnt:header>
+
+                <tnt:ToolHeader>
+
+                    <Title text="EHSM Portal"/>
+
+                    <ToolbarSpacer/>
+
+                    <Text text="Welcome TRAINEE"/>
+
+                    <Button
+                        icon="sap-icon://log"
+                        press="onLogout"/>
+
+                </tnt:ToolHeader>
+
+            </tnt:header>
+
+            <tnt:sideContent>
+
+                <tnt:SideNavigation>
+
+                    <tnt:NavigationList>
+
+                        <tnt:NavigationListItem
+                            text="Dashboard"
+                            icon="sap-icon://home"
+                            select="onDashboardPress"/>
+
+                        <tnt:NavigationListItem
+                            text="Incidents"
+                            icon="sap-icon://alert"
+                            select="onIncidentPress"/>
+
+                        <tnt:NavigationListItem
+                            text="Risks"
+                            icon="sap-icon://warning"
+                            select="onRiskPress"/>
+
+                        <tnt:NavigationListItem
+                            text="Actions"
+                            icon="sap-icon://task"
+                            select="onActionPress"/>
+
+                    </tnt:NavigationList>
+
+                </tnt:SideNavigation>
+
+            </tnt:sideContent>
+
+            <tnt:mainContents>
+
+                <NavContainer id="contentArea"/>
+
+            </tnt:mainContents>
+
+        </tnt:ToolPage>
+
+    </Page>
+
+</mvc:View>

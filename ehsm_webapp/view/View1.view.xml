@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mvc:View
+    controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="EHSM Portal Login">
+
+        <content>
+
+            <VBox
+                alignItems="Center"
+                justifyContent="Center"
+                width="100%"
+                class="sapUiLargeMarginTop">
+
+                <VBox
+                    width="350px"
+                    class="sapUiMediumMargin">
+
+                    <Title
+                        text="EHSM Portal"
+                        level="H2"
+                        class="sapUiSmallMarginBottom"/>
+
+                    <Input
+                        id="empIdInput"
+                        placeholder="Employee ID"
+                        class="sapUiSmallMarginBottom"/>
+
+                    <Input
+                        id="passwordInput"
+                        type="Password"
+                        placeholder="Password"
+                        class="sapUiSmallMarginBottom"/>
+
+                    <Button
+                        text="Login"
+                        type="Emphasized"
+                        press="onLogin"/>
+
+                </VBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

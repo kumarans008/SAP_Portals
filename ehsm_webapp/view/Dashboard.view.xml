@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mvc:View
+    controllerName="project1.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="EHSM Dashboard">
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <Title
+                    text="Dashboard Overview"
+                    level="H2"
+                    class="sapUiSmallMarginBottom"/>
+
+                <HBox
+                    wrap="Wrap"
+                    justifyContent="SpaceAround">
+
+                    <!-- Total Incidents -->
+
+                    <GenericTile
+                        header="Total Incidents"
+                        press="onIncidentPress"
+                        class="sapUiTinyMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="{/TotalIncidents}"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <!-- Open Incidents -->
+
+                    <GenericTile
+                        header="Open Incidents"
+                        class="sapUiTinyMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="{/OpenIncidents}"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <!-- Closed Incidents -->
+
+                    <GenericTile
+                        header="Closed Incidents"
+                        class="sapUiTinyMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="{/ClosedIncidents}"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <!-- High Priority -->
+
+                    <GenericTile
+                        header="High Priority"
+                        class="sapUiTinyMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="{/HighPriorityIncidents}"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <!-- Total Risks -->
+
+                    <GenericTile
+                        header="Total Risks"
+                        press="onRiskPress"
+                        class="sapUiTinyMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="{/TotalRisks}"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <!-- Active Actions -->
+
+                    <GenericTile
+                        header="Active Actions"
+                        press="onActionPress"
+                        class="sapUiTinyMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="{/ActiveActions}"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                    <!-- Incident Management Tile -->
+
+                    <GenericTile
+                        header="Incident Management"
+                        subheader="Open Incident List"
+                        press="onIncidentPress"
+                        class="sapUiTinyMargin">
+
+                        <TileContent>
+                            <NumericContent
+                                value="{/TotalIncidents}"/>
+                        </TileContent>
+
+                    </GenericTile>
+
+                </HBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

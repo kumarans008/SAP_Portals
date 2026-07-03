@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mvc:View
+    controllerName="project1.controller.IncidentDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form">
+
+    <Page
+        title="Incident Details"
+        showNavButton="true"
+        navButtonPress="onBack">
+
+        <content>
+
+            <ObjectHeader
+                title="{NotificationNo}"
+                number="{Priority}"
+                numberUnit="Priority"
+                intro="{Description}"/>
+
+            <form:SimpleForm
+                editable="false"
+                layout="ResponsiveGridLayout"
+                class="sapUiMediumMargin">
+
+                <Label text="Notification Type"/>
+                <Text text="{NotificationType}"/>
+
+                <Label text="Plant"/>
+                <Text text="{Plant}"/>
+
+                <Label text="Created By"/>
+                <Text text="{CreatedBy}"/>
+
+                <Label text="Created Date"/>
+                <Text text="{CreatedDate}"/>
+
+                <Label text="Start Date"/>
+                <Text text="{StartDate}"/>
+
+                <Label text="End Date"/>
+                <Text text="{EndDate}"/>
+
+                <Label text="Defect Group"/>
+                <Text text="{DefectGroup}"/>
+
+                <Label text="Defect Code"/>
+                <Text text="{DefectCode}"/>
+
+                <Label text="Cause Group"/>
+                <Text text="{CauseGroup}"/>
+
+                <Label text="Cause Code"/>
+                <Text text="{CauseCode}"/>
+
+                <Label text="Priority"/>
+                <Text text="{Priority}"/>
+
+                <Label text="Plant"/>
+                <Text text="{Plant}"/>
+
+            </form:SimpleForm>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
